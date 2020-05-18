@@ -7,11 +7,7 @@ set -x
 mkdir -p /tmp/zt-inst-rpi
 cd /tmp/zt-inst-rpi
 
-wget https://ci.jcx.ovh/job/zerotier-rpi-alpine-builds/job/master/lastSuccessfulBuild/artifact/zerotier-one-armv6.tar.gz
-
-tar zxvf zerotier-one-armv6.tar.gz
-
-rm zerotier-one-armv6.tar.gz
+curl -L https://ci.jcx.ovh/job/zerotier-rpi-alpine-builds/job/master/lastSuccessfulBuild/artifact/zerotier-one-armv6.tar.gz | tar -zxvf -
 
 # Move exec to sbin
 mv zerotier-one /sbin
