@@ -13,7 +13,7 @@ node('docker-cli') {
     stage('Setup') {
 	  scmVars = checkout scm
 	  
-	  sh "apk add make gcc build-base linux-headers && wget https://github.com/zerotier/ZeroTierOne/archive/${env.ZEROTIER_VERSION}.tar.gz -o zerotier.tar.gz && tar zxvf zerotier.tar.gz && rm zerotier.tar.gz"
+	  sh "apk add make gcc build-base linux-headers curl && curl https://github.com/zerotier/ZeroTierOne/archive/${env.ZEROTIER_VERSION}.tar.gz --output zerotier.tar.gz && tar zxvf zerotier.tar.gz && rm zerotier.tar.gz"
 		  
 	}
 	
